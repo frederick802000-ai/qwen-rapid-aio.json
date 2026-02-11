@@ -1,0 +1,181 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "ckpt_name": "Qwen-Rapid-AIO-NSFW-v18.1.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "2": {
+        "inputs": {
+          "seed": 632602610298727,
+          "steps": 4,
+          "cfg": 1,
+          "sampler_name": "euler_ancestral",
+          "scheduler": "beta",
+          "denoise": 1,
+          "model": [
+            "11",
+            0
+          ],
+          "positive": [
+            "3",
+            0
+          ],
+          "negative": [
+            "4",
+            0
+          ],
+          "latent_image": [
+            "9",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "3": {
+        "inputs": {
+          "filename": "Full camera view from the side, She is having sex with a handsome chinese man, she is lying down on the bed,she liftdown her top to show her nice breast, she liftup her skirt and open wide spread her leg to show her pussy. He remove his pants nude slowly and rhythmically thrust his penis into her vagina. They are looking at the viewer. Ultra detail face, vagina, clitoris, penis.Flawless detail, Professional Lighting,Technicolor, Panavision, sharp focus, depth of field, 8k photo, HDR, Ultra Detail, taken with Canon EOS R5, DSLR, 75mm lens.\n",
+          "clip": [
+            "1",
+            1
+          ],
+          "vae": [
+            "1",
+            2
+          ],
+          "image1": [
+            "7",
+            0
+          ],
+          "image2": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus Input Prompt"
+        }
+      },
+      "4": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "1",
+            1
+          ],
+          "vae": [
+            "1",
+            2
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus Negative (leave blank)"
+        }
+      },
+      "5": {
+        "inputs": {
+          "samples": [
+            "2",
+            0
+          ],
+          "vae": [
+            "1",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "6": {
+        "inputs": {
+          "images": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "7": {
+        "inputs": {
+          "image": "ComfyUI_temp_zmuag_00002_.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "Optional Input Image"
+        }
+      },
+      "8": {
+        "inputs": {
+          "image": "ComfyUI_00001_clngn_1766675066.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "Optional Input Image"
+        }
+      },
+      "9": {
+        "inputs": {
+          "value": 1984
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "Final Image Size"
+        }
+      },
+      "10": {
+        "inputs": {
+          "filename": "Qwen\\Qwen-Image-Edit-F2P.safetensors",
+          "model": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "11": {
+        "inputs": {
+          "value": 1,
+          "model": [
+            "10",
+            0
+          ]
+        },
+        "class_type": "CFGNorm",
+        "_meta": {
+          "title": "CFGNorm"
+        }
+      },
+      "12": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      }
+    }
+  }
+}
